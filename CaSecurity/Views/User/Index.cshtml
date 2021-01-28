@@ -1,0 +1,37 @@
+﻿@model IEnumerable<User>
+
+<div class="mytab">
+    <table class="table">
+        <br />
+        <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Firma</th>
+                <th>Stanowisko</th>
+                <th>Poziom dostępu</th>
+                <th>ID Karty</th>
+                <th> 
+                    <a asp-action="Create" class="btn btn-primary btn-sm">Dodaj pracownika</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Company)</td>
+                <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                <td>@Html.DisplayFor(modelItem => item.PermitionLevel)</td>
+                <td>@Html.DisplayFor(modelItem => item.PersonalCardId)</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm" style="margin-bottom:3px">Edytuj</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary btn-sm" style="margin-bottom:3px">Usuń</a>
+                </td>
+            </tr>}
+        </tbody>
+    </table>
+</div>

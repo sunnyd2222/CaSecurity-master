@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model HomeVM
+
+<h1>@Model.Tytul</h1>
+
+<div class="mytab">
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>#</th>*@
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Firma</th>
+                <th>Stanowisko</th>
+                <th>Poziom dostępu</th>
+                <th>ID Karty</th>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <th>
+                        <a asp-controller="User" asp-action="Create" class="btn btn-primary btn-sm">Dodaj pracownika</a>
+                    </th>
+
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    @*<td scope="row">@user.Id</td>*@
+                    <td scope="row">@user.Name</td>
+                    <td scope="row">@user.Surname</td>
+                    <td scope="row">@user.Company</td>
+                    <td scope="row">@user.Role</td>
+                    <td scope="row">@user.PermitionLevel</td>
+                    <td scope="row">@user.PersonalCardId</td>
+
+                    <td>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a asp-controller="User" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-primary btn-sm" style="margin-bottom:3px"> Edytuj </a>
+                            <a asp-controller="User" asp-action="Delete" asp-route-id="@user.Id" class="btn btn-primary btn-sm" style="margin-bottom:3px"> Usuń </a>
+                        }
+                    </td>
+                </tr>
+}
+            @*Adamo*@
+        </tbody>
+
+    </table>
+</div>

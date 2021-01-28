@@ -1,0 +1,22 @@
+﻿@model User
+
+<div>
+    <div class="thumbnail">
+        <div class="row">
+            
+            <div class="col-md-3">
+                <h3>@Model.Name @Model.Surname</h3>
+                <h4>@Model.Company</h4>
+                <h4>@Model.Role</h4>
+                <h4>@Model.PermitionLevel</h4>
+                <h4>@Model.PersonalCardId</h4>
+            </div>
+            <div class="col-md-3" style="padding-right:50px">
+                <h3 class="pull-right">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edycja</a>
+                    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>

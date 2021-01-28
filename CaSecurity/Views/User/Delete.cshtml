@@ -1,0 +1,24 @@
+﻿@model User
+
+<div>
+    <div class="delete">
+        <div class="row">
+            
+            <div class="col-md-push-2">
+                <h3>@Model.Name @Model.Surname</h3>
+                <h4>@Model.Company</h4>
+                <h4>@Model.Role</h4>
+                <h4>ID Karty - @Model.PersonalCardId</h4>
+                
+                <h2>Na pewno chcesz usunąć pracownika?</h2>
+                <h4>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Usuń" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                    </form>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>

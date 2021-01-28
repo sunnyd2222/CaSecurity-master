@@ -1,0 +1,47 @@
+﻿@model User
+
+<h2>Dodaj Użytkownika</h2>
+<hr />
+<div class="row">   
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Imię</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label">Nazwisko</label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label">Firma zatrudniająca</label>
+                <input asp-for="Company" class="form-control" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label">Nazwa stanowiska</label>
+                <input asp-for="Role" class="form-control" />
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>            
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="PermitionLevel" class="control-label">Poziom dostępu (2-9)</label>
+                <input asp-for="PermitionLevel" class="form-control" />
+                <span asp-validation-for="PermitionLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalCardId" class="control-label">Wprowadź numer karty użytkownika</label>
+                <input asp-for="PersonalCardId" class="form-control" />
+                <span asp-validation-for="PersonalCardId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj użytkownika" class="btn btn-primary" style="margin-top:30px" />
+                <a asp-action="Index" class="btn btn-primary pull-right" style="margin-top:30px">Powrót</a>
+            </div>
+        </div>
+    </form>
+</div>

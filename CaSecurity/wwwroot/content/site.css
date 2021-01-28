@@ -1,0 +1,42 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('/images/banner.jpg');
+    background-position: 135px 8%;
+    background-size: 270px;
+    background-repeat: no-repeat;
+    /*left: 100px;*/
+}
+
+body {
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: lighter;
+    border: 5px solid #1f3183;
+    left: 300px;
+    transform: scale(1.1, 1.1);
+    transform-origin: 0 0;
+    z-index: 2;
+    position: absolute;
+    color: #5f6678;
+    overflow: scroll;
+}
+
+/* navbar */
+.navbar {
+    background-color: #1f3183;
+    border-color: #1f3183;
+    /*color: #ffffff;*/
+}
+
+.btn-primary {
+    background-color: #1f3183 !important;
+    border-color: #1f3183 !important;
+}
+
+.delete {
+    position: center !important;
+    padding-left: 20px !important;
+}
+
